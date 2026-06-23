@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ERP後台產品列表</title>
+    <link rel="stylesheet" href="css/boostrap.min.css">
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/MY.css">
+
+    <style>
+        body {
+            background: #eef2f7;
+            font-family: "Microsoft JhengHei", sans-serif;
+            color: #263238;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin-top: 40px;
+            padding: 24px;
+            background: #ffffff;
+            border-radius: 16px;
+            box-shadow: 0 8px 24px rgba(15, 23, 42, 0.08);
+        }
+
+        .erp-table {
+            overflow: hidden;
+            border-radius: 12px;
+            border: 1px solid #dbe3ef;
+            background: #ffffff;
+        }
+
+        .erp-table caption {
+            caption-side: top;
+            padding: 18px 10px;
+            font-size: 24px;
+            font-weight: 700;
+            color: #1e293b;
+            text-align: left;
+        }
+
+        .erp-table thead th {
+            background: #1e293b !important;
+            color: #ffffff;
+            padding: 16px 12px;
+            font-size: 15px;
+            letter-spacing: 1px;
+            white-space: nowrap;
+        }
+
+        .erp-table tbody td {
+            padding: 14px 12px;
+            vertical-align: middle;
+            font-size: 15px;
+        }
+
+        .erp-table tbody tr {
+            transition: 0.2s;
+        }
+
+        .erp-table tbody tr:hover {
+            background: #f1f5f9 !important;
+            transform: scale(1.005);
+        }
+
+        .erp-id {
+            font-weight: 700;
+            color: #2563eb;
+        }
+
+        .erp-name {
+            font-weight: 700;
+            color: #0f172a;
+        }
+
+        .erp-price {
+            font-weight: 700;
+            color: #16a34a;
+        }
+
+        .erp-stock {
+            font-weight: 700;
+            color: #475569;
+        }
+
+        .erp-note {
+            color: #64748b;
+        }
+
+        .erp-status-hot {
+            display: inline-block;
+            padding: 5px 12px;
+            border-radius: 999px;
+            background: #fee2e2;
+            color: #dc2626;
+            font-weight: 700;
+            font-size: 13px;
+        }
+
+        .erp-status-normal {
+            display: inline-block;
+            padding: 5px 12px;
+            border-radius: 999px;
+            background: #dcfce7;
+            color: #16a34a;
+            font-weight: 700;
+            font-size: 13px;
+        }
+
+        .erp-status-low {
+            display: inline-block;
+            padding: 5px 12px;
+            border-radius: 999px;
+            background: #fef3c7;
+            color: #d97706;
+            font-weight: 700;
+            font-size: 13px;
+        }
+
+        @media screen and (max-width:768px) {
+
+            .table-rwd thead,
+            caption {
+                display: none;
+            }
+
+            .table-rwd tbody tr {
+                display: block;
+                margin-top: 16px;
+                border: 1px solid #dbe3ef;
+                border-radius: 14px;
+                overflow: hidden;
+                background: #ffffff;
+                box-shadow: 0 6px 16px rgba(15, 23, 42, 0.08);
+            }
+
+            .table-rwd tbody tr td {
+                display: flex;
+                border: none;
+                border-bottom: 1px solid #e5e7eb;
+                padding: 12px;
+            }
+
+            .table-rwd tbody tr td:last-child {
+                border-bottom: none;
+            }
+
+            .table-rwd tbody tr td::before {
+                content: attr(data-th) "：";
+                font-size: 15px;
+                font-weight: bold;
+                color: #334155;
+                width: 35%;
+                text-align: right;
+                padding-right: 1em;
+                flex-shrink: 0;
+            }
+
+            .table-rwd tbody tr td span {
+                width: 65%;
+                display: block;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <table class="table mt-3 table-bordered table-hover table-striped table-rwd erp-table">
+            <caption>ERP 後台｜手搖飲料產品列表</caption>
+            <thead class="table-dark">
+                <tr>
+                    <th>產品編號</th>
+                    <th>產品名稱</th>
+                    <th>產品價格</th>
+                    <th>產品數量</th>
+                    <th>產品備註</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr>
+                    <td data-th="產品編號"><span class="erp-id">D001</span></td>
+                    <td data-th="產品名稱"><span class="erp-name">珍珠奶茶</span></td>
+                    <td data-th="產品價格"><span class="erp-price">$55</span></td>
+                    <td data-th="產品數量"><span class="erp-stock">120</span></td>
+                    <td data-th="產品備註"><span class="erp-status-hot">熱銷商品</span></td>
+                </tr>
+                <tr>
+                    <td data-th="產品編號"><span class="erp-id">D002</span></td>
+                    <td data-th="產品名稱"><span class="erp-name">黑糖珍珠鮮奶</span></td>
+                    <td data-th="產品價格"><span class="erp-price">$70</span></td>
+                    <td data-th="產品數量"><span class="erp-stock">86</span></td>
+                    <td data-th="產品備註"><span class="erp-status-hot">熱銷商品</span></td>
+                </tr>
+                <tr>
+                    <td data-th="產品編號"><span class="erp-id">D003</span></td>
+                    <td data-th="產品名稱"><span class="erp-name">四季春青茶</span></td>
+                    <td data-th="產品價格"><span class="erp-price">$35</span></td>
+                    <td data-th="產品數量"><span class="erp-stock">200</span></td>
+                    <td data-th="產品備註"><span class="erp-status-normal">庫存正常</span></td>
+                </tr>
+                <tr>
+                    <td data-th="產品編號"><span class="erp-id">D004</span></td>
+                    <td data-th="產品名稱"><span class="erp-name">蜂蜜檸檬</span></td>
+                    <td data-th="產品價格"><span class="erp-price">$50</span></td>
+                    <td data-th="產品數量"><span class="erp-stock">45</span></td>
+                    <td data-th="產品備註"><span class="erp-status-low">庫存偏低</span></td>
+                </tr>
+                <tr>
+                    <td data-th="產品編號"><span class="erp-id">D005</span></td>
+                    <td data-th="產品名稱"><span class="erp-name">芋頭鮮奶</span></td>
+                    <td data-th="產品價格"><span class="erp-price">$75</span></td>
+                    <td data-th="產品數量"><span class="erp-stock">38</span></td>
+                    <td data-th="產品備註"><span class="erp-status-low">庫存偏低</span></td>
+                </tr>
+                <tr>
+                    <td data-th="產品編號"><span class="erp-id">D006</span></td>
+                    <td data-th="產品名稱"><span class="erp-name">百香綠茶</span></td>
+                    <td data-th="產品價格"><span class="erp-price">$45</span></td>
+                    <td data-th="產品數量"><span class="erp-stock">160</span></td>
+                    <td data-th="產品備註"><span class="erp-status-normal">庫存正常</span></td>
+                </tr>
+                <tr>
+                    <td data-th="產品編號"><span class="erp-id">D007</span></td>
+                    <td data-th="產品名稱"><span class="erp-name">冬瓜檸檬</span></td>
+                    <td data-th="產品價格"><span class="erp-price">$40</span></td>
+                    <td data-th="產品數量"><span class="erp-stock">95</span></td>
+                    <td data-th="產品備註"><span class="erp-status-normal">庫存正常</span></td>
+                </tr>
+                <tr>
+                    <td data-th="產品編號"><span class="erp-id">D008</span></td>
+                    <td data-th="產品名稱"><span class="erp-name">多多綠茶</span></td>
+                    <td data-th="產品價格"><span class="erp-price">$50</span></td>
+                    <td data-th="產品數量"><span class="erp-stock">130</span></td>
+                    <td data-th="產品備註"><span class="erp-status-hot">熱銷商品</span></td>
+                </tr>
+                <tr>
+                    <td data-th="產品編號"><span class="erp-id">D009</span></td>
+                    <td data-th="產品名稱"><span class="erp-name">鐵觀音奶茶</span></td>
+                    <td data-th="產品價格"><span class="erp-price">$60</span></td>
+                    <td data-th="產品數量"><span class="erp-stock">72</span></td>
+                    <td data-th="產品備註"><span class="erp-status-normal">庫存正常</span></td>
+                </tr>
+                <tr>
+                    <td data-th="產品編號"><span class="erp-id">D010</span></td>
+                    <td data-th="產品名稱"><span class="erp-name">桂花烏龍茶</span></td>
+                    <td data-th="產品價格"><span class="erp-price">$55</span></td>
+                    <td data-th="產品數量"><span class="erp-stock">64</span></td>
+                    <td data-th="產品備註"><span class="erp-status-normal">庫存正常</span></td>
+                </tr>
+                <tr>
+                    <td data-th="產品編號"><span class="erp-id">D011</span></td>
+                    <td data-th="產品名稱"><span class="erp-name">仙草凍奶茶</span></td>
+                    <td data-th="產品價格"><span class="erp-price">$60</span></td>
+                    <td data-th="產品數量"><span class="erp-stock">52</span></td>
+                    <td data-th="產品備註"><span class="erp-status-normal">庫存正常</span></td>
+                </tr>
+                <tr>
+                    <td data-th="產品編號"><span class="erp-id">D012</span></td>
+                    <td data-th="產品名稱"><span class="erp-name">椰果奶茶</span></td>
+                    <td data-th="產品價格"><span class="erp-price">$55</span></td>
+                    <td data-th="產品數量"><span class="erp-stock">33</span></td>
+                    <td data-th="產品備註"><span class="erp-status-low">庫存偏低</span></td>
+                </tr>
+                <tr>
+                    <td data-th="產品編號"><span class="erp-id">D013</span></td>
+                    <td data-th="產品名稱"><span class="erp-name">柳橙綠茶</span></td>
+                    <td data-th="產品價格"><span class="erp-price">$50</span></td>
+                    <td data-th="產品數量"><span class="erp-stock">110</span></td>
+                    <td data-th="產品備註"><span class="erp-status-normal">庫存正常</span></td>
+                </tr>
+                <tr>
+                    <td data-th="產品編號"><span class="erp-id">D014</span></td>
+                    <td data-th="產品名稱"><span class="erp-name">葡萄柚綠茶</span></td>
+                    <td data-th="產品價格"><span class="erp-price">$55</span></td>
+                    <td data-th="產品數量"><span class="erp-stock">42</span></td>
+                    <td data-th="產品備註"><span class="erp-status-low">庫存偏低</span></td>
+                </tr>
+                <tr>
+                    <td data-th="產品編號"><span class="erp-id">D015</span></td>
+                    <td data-th="產品名稱"><span class="erp-name">抹茶拿鐵</span></td>
+                    <td data-th="產品價格"><span class="erp-price">$70</span></td>
+                    <td data-th="產品數量"><span class="erp-stock">80</span></td>
+                    <td data-th="產品備註"><span class="erp-status-hot">熱銷商品</span></td>
+                </tr>
+                <tr>
+                    <td data-th="產品編號"><span class="erp-id">D016</span></td>
+                    <td data-th="產品名稱"><span class="erp-name">可可鮮奶</span></td>
+                    <td data-th="產品價格"><span class="erp-price">$65</span></td>
+                    <td data-th="產品數量"><span class="erp-stock">58</span></td>
+                    <td data-th="產品備註"><span class="erp-status-normal">庫存正常</span></td>
+                </tr>
+                <tr>
+                    <td data-th="產品編號"><span class="erp-id">D017</span></td>
+                    <td data-th="產品名稱"><span class="erp-name">檸檬紅茶</span></td>
+                    <td data-th="產品價格"><span class="erp-price">$45</span></td>
+                    <td data-th="產品數量"><span class="erp-stock">150</span></td>
+                    <td data-th="產品備註"><span class="erp-status-normal">庫存正常</span></td>
+                </tr>
+                <tr>
+                    <td data-th="產品編號"><span class="erp-id">D018</span></td>
+                    <td data-th="產品名稱"><span class="erp-name">金萱烏龍茶</span></td>
+                    <td data-th="產品價格"><span class="erp-price">$40</span></td>
+                    <td data-th="產品數量"><span class="erp-stock">188</span></td>
+                    <td data-th="產品備註"><span class="erp-status-normal">庫存正常</span></td>
+                </tr>
+                <tr>
+                    <td data-th="產品編號"><span class="erp-id">D019</span></td>
+                    <td data-th="產品名稱"><span class="erp-name">草莓鮮奶</span></td>
+                    <td data-th="產品價格"><span class="erp-price">$75</span></td>
+                    <td data-th="產品數量"><span class="erp-stock">28</span></td>
+                    <td data-th="產品備註"><span class="erp-status-low">庫存偏低</span></td>
+                </tr>
+                <tr>
+                    <td data-th="產品編號"><span class="erp-id">D020</span></td>
+                    <td data-th="產品名稱"><span class="erp-name">奶蓋綠茶</span></td>
+                    <td data-th="產品價格"><span class="erp-price">$65</span></td>
+                    <td data-th="產品數量"><span class="erp-stock">90</span></td>
+                    <td data-th="產品備註"><span class="erp-status-hot">熱銷商品</span></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

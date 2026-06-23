@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>切版練習</title>
+    <style>
+        ```css * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #f7efe5;
+            background-image:
+                radial-gradient(#ffffff90 2px, transparent 2px);
+            background-size: 25px 25px;
+            font-family:
+                "Segoe UI",
+                "Microsoft JhengHei",
+                sans-serif;
+            color: #5b4636;
+        }
+
+        /* 主容器 */
+        .wrapper {
+            width: 1024px;
+            margin: 30px auto;
+            border-radius: 30px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            background-color: #fffaf4;
+            border: 5px solid #f4d8b5;
+        }
+
+        /* Banner */
+        .imgbox {
+            width: 1024px;
+            height: 420px;
+
+            /* 可替換成貓咖背景圖 */
+            background-image: url("https://images.unsplash.com/photo-1519052537078-e6302a4968d4?q=80&w=1400&auto=format&fit=crop");
+
+            background-position: center center;
+            background-size: cover;
+            position: relative;
+        }
+
+        /* 手繪貼紙感 */
+        .imgbox::after {
+            content: "🐾 Cat Café";
+            position: absolute;
+            right: 30px;
+            bottom: 25px;
+
+            background-color: #fff4dc;
+            color: #7b5a45;
+
+            padding: 12px 20px;
+            border-radius: 20px;
+
+            font-size: 28px;
+            font-weight: bold;
+
+            transform: rotate(-5deg);
+
+            box-shadow: 4px 4px 0 #d9b38c;
+        }
+
+        /* 導覽列 */
+        nav {
+            background-color: #cfa67a;
+            text-align: center;
+            padding-top: 15px;
+            padding-bottom: 15px;
+            border-top: 4px dashed #fff2df;
+            border-bottom: 4px dashed #fff2df;
+        }
+
+        /* 避免雙 nav 出現問題 */
+        nav nav {
+            background: none;
+            border: none;
+            padding: 0;
+        }
+
+        nav ul {
+            display: inline-block;
+        }
+
+        nav ul li {
+            float: left;
+            list-style-type: none;
+            margin: 0 8px;
+        }
+
+        /* 按鈕 */
+        nav ul li a {
+            text-decoration: none;
+            display: block;
+
+            background-color: #fff4e4;
+            color: #7a5c46;
+
+            padding: 12px 24px;
+
+            border-radius: 50px;
+
+            font-size: 18px;
+            font-weight: bold;
+
+            border: 3px solid #f2d0a7;
+
+            box-shadow: 0 4px 0 #d8b08c;
+
+            transition: all 0.25s ease;
+        }
+
+        /* Hover 效果 */
+        nav ul li a:hover {
+            transform: translateY(-3px);
+            background-color: #ffe7c7;
+            box-shadow: 0 7px 0 #c9996f;
+        }
+
+        /* 內容區 */
+        .content {
+            background-color: #fffaf4;
+            text-align: center;
+
+            padding-top: 50px;
+            padding-bottom: 60px;
+            padding-left: 80px;
+            padding-right: 80px;
+
+            position: relative;
+        }
+
+        /* 小貓裝飾 */
+        .content::before {
+            content: "ฅ^•ﻌ•^ฅ";
+            position: absolute;
+            top: 15px;
+            left: 40px;
+
+            font-size: 30px;
+            color: #d7a87c;
+        }
+
+        /* 標題 */
+        .content h1 {
+            color: #c47b50;
+
+            font-size: 54px;
+
+            margin-top: 10px;
+            margin-bottom: 30px;
+
+            letter-spacing: 4px;
+        }
+
+        /* 文字 */
+        .content p {
+            font-size: 21px;
+            line-height: 2;
+
+            margin-bottom: 25px;
+
+            color: #6e5847;
+        }
+
+        /* CTA 按鈕 */
+        .content a {
+            display: inline-block;
+
+            background-color: #f6b26b;
+
+            width: 180px;
+            height: 55px;
+
+            margin-top: 20px;
+
+            text-decoration: none;
+            color: white;
+
+            font-size: 22px;
+            font-weight: bold;
+
+            line-height: 55px;
+
+            border-radius: 50px;
+
+            box-shadow: 0 5px 0 #d48d47;
+
+            transition: all 0.25s ease;
+        }
+
+        .content a:hover {
+            transform: translateY(-4px);
+            background-color: #ffbf7a;
+            box-shadow: 0 8px 0 #c67b32;
+        }
+
+        /* Footer */
+        .footer {
+            background-color: #cfa67a;
+
+            text-align: center;
+
+            padding-top: 15px;
+            padding-bottom: 15px;
+
+            border-top: 4px dashed #fff1dc;
+        }
+
+        .footer p {
+            font-size: 16px;
+            font-weight: bold;
+            color: #fffaf4;
+            letter-spacing: 1px;
+        }
+
+        ```
+    </style>
+</head>
+
+<body>
+    <!-- #=id；.=class -->
+    <div class="wrapper">
+        <div class="banner">
+            <div class="imgbox"></div>
+            <nav>
+                <!-- nav>ul>li*5>a -->
+                <nav>
+                    <ul>
+                        <li><a href="https://www.google.com"> 首頁 </a></li>
+                        <li><a
+                                href="https://www.youtube.com/watch?v=dQw4w9WgXcQ&list=RDdQw4w9WgXcQ&start_radio=1">最新消息</a>
+                        </li>
+                        <li><a
+                                href="https://www.youtube.com/watch?v=dQw4w9WgXcQ&list=RDdQw4w9WgXcQ&start_radio=1">合作店家</a>
+                        </li>
+                        <li><a
+                                href="https://www.youtube.com/watch?v=dQw4w9WgXcQ&list=RDdQw4w9WgXcQ&start_radio=1">關於我們</a>
+                        </li>
+                        <li><a
+                                href="https://www.youtube.com/watch?v=dQw4w9WgXcQ&list=RDdQw4w9WgXcQ&start_radio=1">聯絡我們</a>
+                        </li>
+                    </ul>
+                </nav>
+            </nav>
+        </div>
+        <div class="content">
+            <h1>歡迎光臨</h1>
+            <p>也能特殊開展之後介紹居然情況戀愛練習閲讀，平時下一頁國內工商日誌體內試試不能之處讀者，全國免費民族感到合理先生，羅東國語樹林特點提問半年尤其是成功條件特別是印刷，戰略些什麼外掛追求表現更多遠程可以說整體，技術時尚講話相冊，本網到達充滿青草湖返回武器，同樣。
+            </p>
+            <p>而來關注人生也在採用所有人本人，天下依舊定位所說傢伙打擊出生本月海外既然認為數碼，發展電器三個甚至士兵讀者大家一本加上練習日韓，責任注意電器形象果然日期完整就有排名溫州記住網易觀看當然跟我，人群上升。</p>
+            <p>推廣我對地說權利高雄電子商務訪問想到證實組合進口上午我看，對了我要日前此刻大師也能神話，你要購買那。</p>
+            <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ&list=RDdQw4w9WgXcQ&start_radio=1">了解更多</a>
+        </div>
+        <div class="footer">
+            <p>Power By K 2026.05</p>
+        </div>
+    </div>
+</body>
+<!-- 筆記
+ctrl+/=註記
+ alt+shift+f=自動整理
+  -->
+
+</html>
