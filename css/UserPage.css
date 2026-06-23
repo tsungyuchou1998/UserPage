@@ -1,0 +1,21 @@
+:root {
+  --primary: #4F6F52;
+  --primary-dark: #3A5540;
+
+  --secondary: #A9BBA4;
+
+  --accent: #C97C5D;
+  --accent-light: #D4A373;
+
+  --bg: #F7F4ED;
+  --bg-secondary: #EAE2D6;
+
+  --card: #E1DDD4;
+
+  --text: #2D2D2D;
+  --text-secondary: #6B6B63;
+
+  --border: #CFC8BC;
+
+  --link: #5C8374;
+}

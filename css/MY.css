@@ -1,0 +1,334 @@
+@import url('https://fonts.googleapis.com/css2?family=Chiron+GoRound+TC:wght@200..900&display=swap');
+
+:root {
+    /* 主題色 */
+    --color-primary: #A7C4A0;
+
+    /* 輔助色 */
+    --color-secondary: #FCFDAF;
+    --color-secondary-2: #D7E9D0;
+    --color-secondary-3: #CDE7BE;
+    --color-secondary-4: #EAF4D3;
+    --color-secondary-5: #FFF8C7;
+
+    /* 網站背景 */
+    --color-background: #F7FDDD;
+    --color-background-alt: #F1F8E8;
+    --color-background-soft: #FAFDF3;
+
+    /* 按鈕 */
+    --color-button: #7FA878;
+    --color-button-hover: #6D9566;
+    --color-button-active: #5B8354;
+    --color-button-text: #FFFFFF;
+
+    /* 文章區塊 */
+    --color-content-bg: #FFFFFF;
+    --color-content-bg-alt: #F9FBF5;
+    --color-content-text: #3F4A3C;
+    --color-content-text-light: #6C7569;
+
+    /* 強調色 */
+    --color-accent-green: #8CBF7F;
+    --color-accent-lime: #C7E77D;
+    --color-accent-yellow: #FFF28A;
+
+    /* 邊框 */
+    --color-border: #D9E5C8;
+    --color-border-dark: #B7C8A8;
+
+    /* 狀態色 */
+    --color-success: #7FBF7A;
+    --color-warning: #F4D35E;
+    --color-danger: #E07A5F;
+    --color-info: #8DBCC7;
+
+    /* 陰影色 */
+    --color-shadow: rgba(127, 168, 120, 0.15);
+    --color-shadow-dark: rgba(63, 74, 60, 0.12);
+}
+
+/* 字體粗度 */
+.fw-100 {
+    font-weight: 100;
+}
+
+.fw-200 {
+    font-weight: 200;
+}
+
+.fw-300 {
+    font-weight: 300;
+}
+
+.fw-400 {
+    font-weight: 400;
+}
+
+.fw-500 {
+    font-weight: 500;
+}
+
+.fw-600 {
+    font-weight: 600;
+}
+
+.fw-700 {
+    font-weight: 700;
+}
+
+.fw-800 {
+    font-weight: 800;
+}
+
+.fw-900 {
+    font-weight: 900;
+}
+
+/* 字體顏色 */
+.btn-text-primary {
+    color: var(--color-content-text);
+}
+
+/* 卡片滑動效果-由下往上*/
+
+/* =========================
+                卡片本體
+        ========================= */
+.card {
+    position: relative;
+
+    height: 250px;
+    margin-top: 20px;
+    padding: 50px;
+
+    overflow: hidden;
+
+    border-radius: 20px;
+
+    font-size: 22px;
+
+    line-height: 1.6;
+    color: white;
+
+
+    background: linear-gradient(135deg,
+            #A7C4A0 0%,
+            #7FA878 100%);
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, .2);
+}
+
+/* =========================
+                Hover容器
+        ========================= */
+.roller {
+    position: relative;
+    overflow: hidden;
+}
+
+/* =========================
+                毛玻璃覆蓋層
+        ========================= */
+.roller .roller_card_b {
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    box-sizing: border-box;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: rgba(255, 255, 255, .08);
+
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+
+    opacity: 0;
+
+    transform: translateY(100%);
+
+    transition:
+        transform .45s ease,
+        opacity .45s ease;
+}
+
+/* =========================
+                Hover動畫
+        ========================= */
+.roller:hover .roller_card_b {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* =========================
+                查看按鈕
+        ========================= */
+.roller_card .btn {
+
+    padding: 12px 35px;
+
+    border: none;
+    border-radius: 50px;
+
+    background: rgba(255, 255, 255, .95);
+
+    color: #333;
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 1px;
+
+    box-shadow:
+        0 8px 20px rgba(0, 0, 0, .15);
+
+    transition: all .3s ease;
+}
+
+.roller_card .btn:hover {
+    background: white;
+
+    transform:
+        translateY(-3px) scale(1.05);
+
+    box-shadow:
+        0 12px 25px rgba(0, 0, 0, .25);
+}
+
+/* 卡片滑動由上到下 */
+
+/* =========================
+                毛玻璃覆蓋層
+        ========================= */
+.roller .roller_card_t {
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    box-sizing: border-box;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: rgba(255, 255, 255, .08);
+
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+
+    opacity: 0;
+
+    transform: translateY(-100%);
+
+    transition:
+        transform .45s ease,
+        opacity .45s ease;
+}
+
+/* =========================
+                Hover動畫
+        ========================= */
+.roller:hover .roller_card_t {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* 卡片滑動由左到右 */
+
+/* =========================
+                毛玻璃覆蓋層
+        ========================= */
+.roller .roller_card_l {
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    box-sizing: border-box;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: rgba(255, 255, 255, .08);
+
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+
+    opacity: 0;
+
+    transform: translateX(-100%);
+
+    transition:
+        transform .45s ease,
+        opacity .45s ease;
+}
+
+/* =========================
+                Hover動畫
+        ========================= */
+.roller:hover .roller_card_l {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* 卡片滑動由右到左 */
+
+/* =========================
+                毛玻璃覆蓋層
+        ========================= */
+.roller .roller_card_r {
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    box-sizing: border-box;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: rgba(255, 255, 255, .08);
+
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+
+    opacity: 0;
+
+    transform: translateX(100%);
+
+    transition:
+        transform .45s ease,
+        opacity .45s ease;
+}
+
+/* =========================
+                Hover動畫
+        ========================= */
+.roller:hover .roller_card_r {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* 背景圖 */
+.bgcover {
+    background-position: center;
+    background-size: cover;
+}
