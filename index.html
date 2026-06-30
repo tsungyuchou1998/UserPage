@@ -4,203 +4,637 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>UserPage</title>
-    <link rel="stylesheet" href="css/UserPage.css">
+    <title>Ken｜Software Engineer Portfolio</title>
+
     <style>
         :root {
-            --primary: #4F6F52;
-            --primary-dark: #3A5540;
+            --bg: #F4F0E8;
+            --paper: #FBFAF6;
+            --ink: #1F1F1F;
+            --gray: #747064;
+            --line: #D8D1C7;
+            --olive: #4F6F52;
+            --brown: #A66A45;
+            --dark: #17211A;
+        }
 
-            --secondary: #A9BBA4;
+        * {
+            box-sizing: border-box;
+        }
 
-            --accent: #C97C5D;
-            --accent-light: #D4A373;
-
-            --bg: #F7F4ED;
-            --bg-secondary: #EAE2D6;
-
-            --card: #E1DDD4;
-
-            --text: #2D2D2D;
-            --text-secondary: #6B6B63;
-
-            --border: #CFC8BC;
-
-            --link: #5C8374;
+        html {
+            scroll-behavior: smooth;
         }
 
         body {
-            background-color: var(--primary-dark);
+            margin: 0;
+            font-family: "Noto Serif TC", "Microsoft JhengHei", serif;
+            background-color: var(--bg);
+            color: var(--ink);
         }
 
-        .s01 {
-            background-color: var(--primary);
-            height: 100vh;
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        img {
+            display: block;
+            width: 100%;
+        }
+
+        /* Header */
+        .nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 99;
+            padding: 22px 7vw;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: rgba(244, 240, 232, 0.82);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--line);
+        }
+
+        .logo {
+            font-size: 18px;
+            font-weight: 900;
+            letter-spacing: 3px;
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 28px;
+            font-size: 14px;
+            color: var(--gray);
+        }
+
+        .nav-menu a:hover {
+            color: var(--brown);
+        }
+
+        /* Hero */
+        .hero {
+            min-height: 100vh;
+            padding: 120px 7vw 70px;
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 56px;
+            align-items: center;
             position: relative;
         }
 
-        .s01 .box01 {
-            width: 200px;
-            height: 200px;
-            background-color: var(--secondary);
+        .hero::before {
+            content: "PORTFOLIO";
             position: absolute;
-            top: 0;
-            left: 0;
+            top: 120px;
+            right: 5vw;
+            font-size: 11vw;
+            font-weight: 900;
+            letter-spacing: 10px;
+            color: rgba(31, 31, 31, 0.04);
+            pointer-events: none;
         }
 
-        .s01 .box02 {
-            width: 200px;
-            height: 200px;
-            background-color: var(--secondary);
-            position: absolute;
-            top: 0;
-            right: 0;
-        }
-
-        .s01 .box03 {
-            width: 200px;
-            height: 200px;
-            background-color: var(--secondary);
-            position: absolute;
-            bottom: 0;
-            left: 0;
-        }
-
-        .s01 .box04 {
-            width: 200px;
-            height: 200px;
-            background-color: var(--secondary);
-            position: absolute;
-            right: 0;
-            bottom: 0;
-        }
-
-        .s01 .UserImg {
-            position: absolute;
-            top: 100px;
-            left: 100px;
-            right: 100px;
-            bottom: 100px;
-            background-color: var(--card);
+        .hero-img {
+            height: 72vh;
+            min-height: 520px;
             background-image: url(images/cat-selfy.avif);
-            background-position: center center;
             background-size: cover;
-            border-radius: 15px;
+            background-position: center;
+            border-radius: 28px;
+            box-shadow: 0 30px 70px rgba(23, 33, 26, 0.22);
+            position: relative;
+            overflow: hidden;
         }
 
-        .s01 .UserText {
+        .hero-img::after {
+            content: "";
             position: absolute;
-            top: 10%;
-            left: 10%;
-            right: 70%;
+            inset: 18px;
+            border: 1px solid rgba(255, 255, 255, 0.65);
+            border-radius: 22px;
         }
 
-        /* s02作品區 */
-        .s02 {
-            padding: 80px 10%;
-            background-color: var(--accent-light);
-            text-align: center;
+        .hero-content {
+            position: relative;
+            z-index: 2;
         }
 
-        .s02 h2 {
-            font-size: 36px;
-        }
-
-        .s02 .card {
+        .issue {
             display: inline-block;
-            margin: 15px;
-            width: 240px;
-            background-color: var(--card);
-            padding: 20px;
-            text-align: left;
-            border-radius: 12px;
+            margin-bottom: 30px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid var(--ink);
+            font-size: 13px;
+            letter-spacing: 3px;
+            color: var(--gray);
         }
 
-        .s02 .card h3 {
-            margin-top: 0;
-            color: var(--text);
+        .hero-title {
+            margin: 0;
+            font-size: clamp(58px, 8vw, 120px);
+            line-height: 0.88;
+            letter-spacing: -4px;
+            font-weight: 900;
         }
 
-        .s02 .card p {
-            line-height: 1.6;
-            color: var(--text-secondary);
+        .hero-title span {
+            color: var(--olive);
         }
 
-        .s02 .card a {
-            background-color: var(--card);
-            line-height: 1.6;
-            color: var(--text);
+        .hero-job {
+            margin: 32px 0 16px;
+            font-size: 24px;
+            color: var(--brown);
+            letter-spacing: 2px;
+        }
 
+        .hero-text {
+            max-width: 520px;
+            font-size: 17px;
+            line-height: 2;
+            color: var(--gray);
+        }
+
+        .hero-meta {
+            margin-top: 44px;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 18px;
+            border-top: 1px solid var(--line);
+            padding-top: 28px;
+        }
+
+        .meta-item small {
             display: block;
-            text-align: center;
+            margin-bottom: 8px;
+            color: var(--gray);
+            letter-spacing: 2px;
+            font-size: 12px;
+        }
 
-            width: 160px;
-            height: 56px;
+        .meta-item strong {
+            font-size: 16px;
+        }
 
-            margin-top: 20px;
-            margin-left: auto;
-            margin-right: auto;
-            text-decoration: none;
+        /* Section */
+        .section {
+            padding: 100px 7vw;
+        }
 
-            /* color: var(--color_bg); */
+        .section-title {
+            display: grid;
+            grid-template-columns: 120px 1fr;
+            gap: 30px;
+            align-items: end;
+            margin-bottom: 56px;
+            border-bottom: 1px solid var(--line);
+            padding-bottom: 24px;
+        }
 
-            font-size: 20px;
-            font-weight: bold;
+        .section-title .num {
+            font-size: 56px;
+            color: var(--brown);
+            font-weight: 900;
+        }
 
-            line-height: 56px;
+        .section-title h2 {
+            margin: 0;
+            font-size: clamp(36px, 5vw, 72px);
+            line-height: 1;
+        }
 
+        .section-title p {
+            margin: 16px 0 0;
+            color: var(--gray);
+            line-height: 1.8;
+        }
+
+        /* About */
+        .about {
+            background-color: var(--paper);
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 0.9fr 1.1fr;
+            gap: 60px;
+        }
+
+        .quote-box {
+            padding: 42px;
+            background-color: var(--dark);
+            color: var(--paper);
+            border-radius: 24px;
+        }
+
+        .quote-box h3 {
+            margin-top: 0;
+            font-size: 32px;
+            line-height: 1.4;
+        }
+
+        .quote-box p {
+            color: rgba(255, 255, 255, 0.72);
+            line-height: 2;
+        }
+
+        .about-text {
+            font-size: 17px;
+            line-height: 2.1;
+            color: var(--gray);
+        }
+
+        .skills {
+            margin-top: 36px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .skills span {
+            padding: 10px 18px;
+            border: 1px solid var(--line);
             border-radius: 999px;
+            background-color: var(--bg);
+            color: var(--dark);
+            font-size: 14px;
+        }
 
-            box-shadow: 0 8px 20px rgba(47, 93, 140, 0.25);
+        /* Works */
+        .works {
+            background-color: var(--bg);
+        }
+
+        .work-list {
+            display: grid;
+            gap: 34px;
+        }
+
+        .work-card {
+            display: grid;
+            grid-template-columns: 120px 1fr 220px;
+            gap: 30px;
+            align-items: center;
+            padding: 38px;
+            background-color: var(--paper);
+            border: 1px solid var(--line);
+            border-radius: 26px;
+            transition: 0.35s ease;
+        }
+
+        .work-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 24px 50px rgba(23, 33, 26, 0.12);
+        }
+
+        .work-num {
+            font-size: 52px;
+            font-weight: 900;
+            color: var(--olive);
+        }
+
+        .work-info h3 {
+            margin: 0 0 14px;
+            font-size: 32px;
+        }
+
+        .work-info p {
+            margin: 0;
+            line-height: 1.8;
+            color: var(--gray);
+        }
+
+        .work-tags {
+            margin-top: 18px;
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .work-tags span {
+            font-size: 12px;
+            color: var(--brown);
+            letter-spacing: 1px;
+        }
+
+        .work-link {
+            justify-self: end;
+            width: 170px;
+            height: 54px;
+            border-radius: 999px;
+            border: 1px solid var(--ink);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: 900;
+            transition: 0.3s;
+        }
+
+        .work-link:hover {
+            background-color: var(--ink);
+            color: var(--paper);
+        }
+
+        /* Contact */
+        .contact {
+            background-color: var(--dark);
+            color: var(--paper);
+            text-align: center;
+        }
+
+        .contact h2 {
+            margin: 0;
+            font-size: clamp(42px, 7vw, 96px);
+            line-height: 1;
+        }
+
+        .contact p {
+            margin: 28px auto 0;
+            max-width: 620px;
+            color: rgba(255, 255, 255, 0.68);
+            line-height: 2;
+        }
+
+        .contact-btn {
+            margin-top: 42px;
+            display: inline-flex;
+            padding: 16px 36px;
+            border-radius: 999px;
+            background-color: var(--paper);
+            color: var(--dark);
+            font-weight: 900;
+        }
+
+        .footer {
+            padding: 24px 7vw;
+            background-color: var(--dark);
+            color: rgba(255, 255, 255, 0.45);
+            border-top: 1px solid rgba(255, 255, 255, 0.12);
+            text-align: center;
+            font-size: 13px;
+            letter-spacing: 1px;
+        }
+
+        /* RWD */
+        @media screen and (max-width: 992px) {
+            .hero {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-img {
+                height: 520px;
+            }
+
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .work-card {
+                grid-template-columns: 1fr;
+            }
+
+            .work-link {
+                justify-self: start;
+            }
+        }
+
+        @media screen and (max-width: 768px) {
+            .nav-menu {
+                display: none;
+            }
+
+            .hero {
+                padding-top: 100px;
+            }
+
+            .hero-img {
+                height: 420px;
+                min-height: auto;
+            }
+
+            .hero-title {
+                letter-spacing: -2px;
+            }
+
+            .hero-meta {
+                grid-template-columns: 1fr;
+            }
+
+            .section-title {
+                grid-template-columns: 1fr;
+            }
+
+            .work-card {
+                padding: 28px;
+            }
+
+            .work-info h3 {
+                font-size: 26px;
+            }
         }
     </style>
 </head>
 
-
 <body>
 
-    <section class="s01">
-        <div class="box01"></div>
-        <div class="box02"></div>
-        <div class="box03"></div>
-        <div class="box04"></div>
-        <div class="UserImg"></div>
-        <div class="UserText">
-            <h1>Mio Mio 履歷</h1>
-            <hr>
-            <h2>應徵職位:軟體工程師</h2>
-            <P>座右銘:你還記得你迄今為止吃過多少麵包嗎?</P>
+    <header class="nav">
+        <a href="#" class="logo">MIO MIO</a>
+        <nav class="nav-menu">
+            <a href="#about">About</a>
+            <a href="#works">Works</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="hero-img"></div>
+
+        <div class="hero-content">
+            <div class="issue">PORTFOLIO / RESUME / 2026</div>
+
+            <h1 class="hero-title">
+                MIO<br>
+                <span>MIO</span>
+            </h1>
+
+            <div class="hero-job">Software Engineer</div>
+
+            <p class="hero-text">
+                以結構化思維打造穩定、清楚且具備美感的網頁介面。
+                專注於 HTML、CSS、RWD 響應式設計與後台系統介面切版，
+                讓功能與視覺能夠兼具效率與質感。
+            </p>
+
+            <div class="hero-meta">
+                <div class="meta-item">
+                    <small>APPLY FOR</small>
+                    <strong>軟體工程師</strong>
+                </div>
+                <div class="meta-item">
+                    <small>MOTTO</small>
+                    <strong>你還記得你迄今為止吃過多少麵包嗎？</strong>
+                </div>
+            </div>
         </div>
     </section>
-    <section class="s02">
-        <h2>我的作品</h2>
-        <!-- 作品01 -->
-        <div class="card">
-            <h3>切版練習</h3>
-            <p>使用HTML、CSS練習切版</p>
-            <!-- 開新分頁 target="blank" -->
-            <a href="20260527-1-AI01.html" target="_blank">查看作品</a>
+
+    <!-- About -->
+    <section class="section about" id="about">
+        <div class="section-title">
+            <div class="num">01</div>
+            <div>
+                <h2>About Me</h2>
+                <p>用工程邏輯整理畫面，用設計語言呈現專業。</p>
+            </div>
         </div>
 
-        <!-- 作品02 -->
-        <div class="card">
-            <h3>ERP後台介面</h3>
-            <p>@media根據裝置調整介面</p>
-            <a href="20260605-ch5-ai01.html" target="_blank">查看作品</a>
-        </div>
-        <!-- 作品03 -->
-        <div class="card">
-            <h3>3號網站</h3>
-            <p>使用HTML、CSS練習切版</p>
-            <a href="20260602-1.html" target="_blank">查看作品</a>
-        </div>
-        <!-- 作品04 -->
-        <div class="card">
-            <h3>4號網站</h3>
-            <p>使用HTML、CSS練習切版</p>
-            <a href="20260602-1.html" target="_blank">查看作品</a>
-        </div>
+        <div class="about-grid">
+            <div class="quote-box">
+                <h3>Code is structure.<br>Design is communication.</h3>
+                <p>
+                    我相信一個好的網站，不只是畫面好看，而是資訊清楚、結構穩定，
+                    並且能讓使用者快速理解內容。
+                </p>
+            </div>
 
+            <div>
+                <p class="about-text">
+                    我目前以網頁前端切版與後台介面設計為主要練習方向，
+                    熟悉使用 HTML、CSS 建立頁面結構，並透過 RWD 設計讓網站能在不同裝置上保持良好的閱讀體驗。
+                    在作品中，我注重排版層次、色彩一致性與使用者操作流程，
+                    讓網站不只是完成畫面，而是更接近實際專案可使用的狀態。
+                </p>
+
+                <div class="skills">
+                    <span>HTML</span>
+                    <span>CSS</span>
+                    <span>RWD</span>
+                    <span>UI Layout</span>
+                    <span>Admin System</span>
+                    <span>Laravel Basic</span>
+                    <span>Bootstrap</span>
+                </div>
+            </div>
+        </div>
     </section>
+
+    <!-- Works -->
+    <section class="section works" id="works">
+        <div class="section-title">
+            <div class="num">02</div>
+            <div>
+                <h2>Selected Works</h2>
+                <p>以雜誌專題式排版呈現作品，讓每個專案都像一篇技術與視覺的作品報導。</p>
+            </div>
+        </div>
+
+        <div class="work-list">
+
+            <article class="work-card">
+                <div class="work-num">01</div>
+                <div class="work-info">
+                    <h3>切版練習</h3>
+                    <p>
+                        使用 HTML 與 CSS 練習網頁切版，建立基礎排版邏輯，
+                        並熟悉區塊、間距、色彩與版面比例。
+                    </p>
+                    <div class="work-tags">
+                        <span>HTML</span>
+                        <span>CSS</span>
+                        <span>Layout Practice</span>
+                    </div>
+                </div>
+                <a href="20260527-1-AI01.html" target="_blank" class="work-link">查看作品</a>
+            </article>
+
+            <article class="work-card">
+                <div class="work-num">02</div>
+                <div class="work-info">
+                    <h3>ERP 後台介面</h3>
+                    <p>
+                        以常見 ERP 後台系統為方向，練習表格、資料列表與 RWD 響應式調整，
+                        讓後台介面在不同裝置上更容易閱讀。
+                    </p>
+                    <div class="work-tags">
+                        <span>ERP</span>
+                        <span>Dashboard</span>
+                        <span>Responsive</span>
+                    </div>
+                </div>
+                <a href="20260605-ch5-ai01.html" target="_blank" class="work-link">查看作品</a>
+            </article>
+
+            <article class="work-card">
+                <div class="work-num">03</div>
+                <div class="work-info">
+                    <h3>導入 Opendata 練習</h3>
+                    <p>
+                        練習導入Opendata進行資料清洗、重構，產出真實可用的後台資料。
+                    </p>
+                    <div class="work-tags">
+                        <span>HTML</span>
+                        <span>CSS</span>
+                        <span>Opendata</span>
+                    </div>
+                </div>
+                <a href="20260609-travleFood.html" target="_blank" class="work-link">查看作品</a>
+            </article>
+
+            <article class="work-card">
+                <div class="work-num">04</div>
+                <div class="work-info">
+                    <h3>時間軸版面配置練習</h3>
+                    <p>
+                        延伸切版練習，持續強化畫面比例、文字層級與區塊視覺整理能力。
+                    </p>
+                    <div class="work-tags">
+                        <span>Practice</span>
+                        <span>UI Design</span>
+                        <span>CSS</span>
+                    </div>
+                </div>
+                <a href="20260623-ch7-flex-ex01-timeline-section-ai01.html" target="_blank" class="work-link">查看作品</a>
+            </article>
+
+            <article class="work-card">
+                <div class="work-num">05</div>
+                <div class="work-info">
+                    <h3>利用Javascript建立表單練習</h3>
+                    <p>
+                        練習使用Javascript建立表單的各項功能。
+                    </p>
+                    <div class="work-tags">
+                        <span>Practice</span>
+                        <span>UI Design</span>
+                        <span>Javascript</span>
+                    </div>
+                </div>
+                <a href="20260625-ch11-form-JS-Ai.html" target="_blank" class="work-link">查看作品</a>
+            </article>
+
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="section contact" id="contact">
+        <h2>Let’s Build<br>Something Better.</h2>
+        <p>
+            期待能參與實際專案，將版面設計、前端切版與系統邏輯結合，
+            打造穩定、清楚且具備專業感的網站介面。
+        </p>
+        <a href="mailto:yourmail@example.com" class="contact-btn">Contact Me</a>
+    </section>
+
+    <footer class="footer">
+        © 2026 Mio Mio Portfolio. Designed with magazine-style layout.
+    </footer>
+
+</body>
 
 </html>

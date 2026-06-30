@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>導入 Opendata - 地方美食</title>
+    <link rel="stylesheet" href="css/boostrap.min.css">
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/MY.css">
+    <style>
+        body {
+            background: #eef2f7;
+            font-family: "Microsoft JhengHei", sans-serif;
+            color: #263238;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin-top: 40px;
+            padding: 24px;
+            background: #ffffff;
+            border-radius: 16px;
+            box-shadow: 0 8px 24px rgba(15, 23, 42, 0.08);
+        }
+
+        .erp-table {
+            overflow: hidden;
+            border-radius: 12px;
+            border: 1px solid #dbe3ef;
+            background: #ffffff;
+        }
+
+        .erp-table caption {
+            caption-side: top;
+            padding: 18px 10px;
+            font-size: 24px;
+            font-weight: 700;
+            color: #1e293b;
+            text-align: left;
+        }
+
+        .erp-table thead th {
+            background: #1e293b !important;
+            color: #ffffff;
+            padding: 16px 12px;
+            font-size: 15px;
+            letter-spacing: 1px;
+            white-space: nowrap;
+        }
+
+        .erp-table tbody td {
+            padding: 14px 12px;
+            vertical-align: middle;
+            font-size: 15px;
+        }
+
+        .erp-table tbody tr {
+            transition: 0.2s;
+        }
+
+        .erp-table tbody tr:hover {
+            background: #f1f5f9 !important;
+            transform: scale(1.005);
+        }
+
+        .erp-id {
+            font-weight: 700;
+            color: #2563eb;
+        }
+
+        .erp-name {
+            font-weight: 700;
+            color: #0f172a;
+        }
+
+        .erp-price {
+            font-weight: 700;
+            color: #16a34a;
+        }
+
+        .erp-stock {
+            font-weight: 700;
+            color: #475569;
+        }
+
+        .erp-note {
+            color: #64748b;
+        }
+
+        .erp-status-hot {
+            display: inline-block;
+            padding: 5px 12px;
+            border-radius: 999px;
+            background: #fee2e2;
+            color: #dc2626;
+            font-weight: 700;
+            font-size: 13px;
+        }
+
+        .erp-status-normal {
+            display: inline-block;
+            padding: 5px 12px;
+            border-radius: 999px;
+            background: #dcfce7;
+            color: #16a34a;
+            font-weight: 700;
+            font-size: 13px;
+        }
+
+        .erp-status-low {
+            display: inline-block;
+            padding: 5px 12px;
+            border-radius: 999px;
+            background: #fef3c7;
+            color: #d97706;
+            font-weight: 700;
+            font-size: 13px;
+        }
+
+        @media screen and (max-width:768px) {
+
+            .table-rwd thead,
+            caption {
+                display: none;
+            }
+
+            .table-rwd tbody tr {
+                display: block;
+                margin-top: 16px;
+                border: 1px solid #dbe3ef;
+                border-radius: 14px;
+                overflow: hidden;
+                background: #ffffff;
+                box-shadow: 0 6px 16px rgba(15, 23, 42, 0.08);
+            }
+
+            .table-rwd tbody tr td {
+                display: flex;
+                border: none;
+                border-bottom: 1px solid #e5e7eb;
+                padding: 12px;
+            }
+
+            .table-rwd tbody tr td:last-child {
+                border-bottom: none;
+            }
+
+            .table-rwd tbody tr td::before {
+                content: attr(data-th) "：";
+                font-size: 15px;
+                font-weight: bold;
+                color: #334155;
+                width: 35%;
+                text-align: right;
+                padding-right: 1em;
+                flex-shrink: 0;
+            }
+
+            .table-rwd tbody tr td span {
+                width: 65%;
+                display: block;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <table class="table mt-3 table-bordered table-hover table-striped table-rwd erp-table">
+            <caption>旅館列表</caption>
+            <thead class="table-dark">
+                <tr>
+                    <th>編號</th>
+                    <th>名稱</th>
+                    <th>圖片</th>
+                    <th>簡介</th>
+                    <th>縣市名稱</th>
+                    <th>地址</th>
+                    <th>電話</th>
+                    <th>Email</th>
+                </tr>
+            </thead>
+
+            <tbody id="mybody">
+                <tr>
+                    <td data-th="編號"><span class="erp-id">XXXXXXXX</span></td>
+                    <td data-th="名稱"><span class="erp-name">XXXXXXXX</span></td>
+                    <td data-th="圖片"><span class="erp-status-hot"><img src="https://ezgo.ardswc.gov.tw/_api/content/images/agrispots/25819/480x360_agrispots-image--i0uqxsgseicmbf12-ztpa.jpg" class="img-fluid" alt=""></span></td>
+                    <td data-th="簡介"><span class="erp-status-hot">XXXXXXXX</span></td>
+                    <td data-th="縣市名稱"><span class="erp-price">XXXXXXXX</span></td>
+                    <td data-th="地址"><span class="erp-stock">XXXXXXXX</span></td>
+                    <td data-th="電話"><span class="erp-status-hot">XXXXXXXX</span></td>
+                    <td data-th="Email"><span class="erp-status-hot">XXXXXXXX</span></td>
+                </tr>
+
+            </tbody>
+        </table>
+    </div>
+
+    <script src="js/jquery-4.0.0.js"></script>
+    <script>
+        $(function () {
+            // 載入資料
+            $.ajax({
+                type: "GET",
+                url: "https://data.moa.gov.tw/Service/OpenData/ODwsv/ODwsvTravelFood.aspx?IsTransData=1&UnitId=193",
+                dataType: "json",
+                success: function (data) {
+                    console.log(data);
+
+                    const cleanData = data.map(function (item, index) {
+                        // 進行資料清洗
+                        // 名稱
+                        let name = (item.Name ?? "").trim();
+                        if (name == "") {
+                            name = "未提供名稱";
+                        }
+                        // 圖片
+                        let images = (item.PicURL ?? "").trim();
+                        if (images == "") {
+                            images = "未提供圖片";
+                        }
+                        // 簡介
+                        let description = (item.HostWords ?? "").trim();
+                        if (description == "") {
+                            description = "未提供圖片";
+                        }
+                        // 縣市名稱
+                        let city = (item.City ?? "").trim();
+                        if (city == "") {
+                            city = "未提供";
+                        }
+                        // 鄉鎮名稱
+                        let town = (item.Town ?? "").trim();
+                        if (town == "") {
+                            town = "未提供";
+                        }
+                        // 地址
+                        let address = (item.Address ?? "").trim();
+                        if (address == "") {
+                            address = "未提供地址";
+                        }
+                        // 電話
+                        let tel = (item.Tel ?? "").trim();
+                        if (tel == "") {
+                            tel = "未提供電話";
+                        }
+                        // Email
+                        let email = (item.Email ?? "").trim();
+                        if (email == "") {
+                            email = "未提供信箱";
+                        }
+                        // 資料重構
+                        return {
+                            id: index + 1,
+                            name: name,
+                            images: images,
+                            description: description,
+                            city: city,
+                            address: city + town + address,
+                            tel: tel,
+                            email: email
+                        }
+                    });
+                    console.log("清洗後的資料", cleanData);
+                    $("#mybody").empty();  //將原本欄位清空
+
+                    // 將清洗後的資料渲染至table
+                    cleanData.forEach(function(item){
+                        let strHTML = `<tr>
+                                            <td data-th="編號"><span class="erp-id">${item.id}</span></td>
+                                            <td data-th="名稱"><span class="erp-name">${item.name}</span></td>
+                                            <td data-th="圖片"><span class="erp-stock"><img src="${item.images}" class="img-fluid" alt=""></span></td>
+                                            <td data-th="簡介"><span class="erp-stock">${item.description}</span></td>
+                                            <td data-th="縣市名稱"><span class="erp-price">${item.city}</span></td>
+                                            <td data-th="地址"><span class="erp-stock">${item.address}</span></td>
+                                            <td data-th="電話"><span class="erp-status-hot">${item.tel}</span></td>
+                                            <td data-th="Email"><span class="erp-status-hot">${item.email}</span></td>
+                                        </tr>`;
+                        $("#mybody").append(strHTML);
+                    })
+
+                },
+                error: function (err) {
+                    console.log(err);
+                }
+            });
+
+
+
+
+        });
+    </script>
+</body>
+
+</html>

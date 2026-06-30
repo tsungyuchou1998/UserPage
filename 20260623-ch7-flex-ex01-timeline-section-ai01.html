@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>活動派對流程與報價</title>
+    <link rel="stylesheet" href="css/boostrap.min.css">
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/MY.css">
+
+    <style>
+        body {
+            background: linear-gradient(135deg, #120018, #2b0f3a, #140014);
+            color: #fff;
+            font-family: "Microsoft JhengHei", sans-serif;
+        }
+
+        .main-title {
+            color: #fff;
+            font-weight: 900;
+            letter-spacing: 4px;
+        }
+
+        .sub-title {
+            color: #f8c8ff;
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+        }
+
+        .imgbox {
+            height: 360px;
+            border-radius: 22px;
+            background-position: center;
+            background-size: cover;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, .45);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .imgbox::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(255, 0, 180, .25), rgba(0, 255, 255, .18));
+        }
+
+        .textbox {
+            margin: 20px 0;
+            padding: 32px;
+            border-radius: 22px;
+            background: rgba(255, 255, 255, .12);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            border: 1px solid rgba(255, 255, 255, .25);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, .3);
+        }
+
+        .textbox h2 {
+            font-weight: 900;
+            color: #ffd6ff;
+            margin-bottom: 15px;
+        }
+
+        .textbox p {
+            font-size: 1.05rem;
+            line-height: 1.9;
+            color: #f5eaff;
+        }
+
+        .tag {
+            display: inline-block;
+            padding: 6px 14px;
+            border-radius: 99px;
+            background: linear-gradient(135deg, #ff4ecd, #7c4dff);
+            color: #fff;
+            font-size: .9rem;
+            margin-bottom: 12px;
+        }
+
+        .timeline-section {
+            position: relative;
+        }
+
+        .timeline-section::before {
+            position: absolute;
+            content: "";
+            top: 10px;
+            bottom: 0;
+            width: 5px;
+            background: linear-gradient(to bottom, #ff4ecd, #00e5ff);
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 99px;
+        }
+
+        .timeline-section-pointer {
+            position: relative;
+            margin-bottom: 60px;
+        }
+
+        .timeline-section-pointer::before {
+            position: absolute;
+            content: "";
+            width: 24px;
+            height: 24px;
+            background-color: #fff;
+            top: 0;
+            border-radius: 50%;
+            left: 50%;
+            transform: translateX(-50%);
+            border: 6px solid #ff4ecd;
+            z-index: 2;
+            box-shadow: 0 0 20px #ff4ecd;
+        }
+
+        .price-section {
+            margin: 70px 0;
+            padding: 45px;
+            border-radius: 28px;
+            background: rgba(255, 255, 255, .13);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, .25);
+        }
+
+        .price-card {
+            background: rgba(255, 255, 255, .12);
+            border-radius: 22px;
+            padding: 28px;
+            height: 100%;
+            border: 1px solid rgba(255, 255, 255, .2);
+            transition: .3s;
+        }
+
+        .price-card:hover {
+            transform: translateY(-8px);
+            background: rgba(255, 255, 255, .2);
+        }
+
+        .price-card h3 {
+            color: #ffd6ff;
+            font-weight: 900;
+        }
+
+        .price {
+            font-size: 2rem;
+            font-weight: 900;
+            color: #00e5ff;
+            margin: 15px 0;
+        }
+
+        .price-card ul {
+            padding-left: 20px;
+            line-height: 2;
+        }
+
+        @media screen and (max-width: 768px) {
+
+            .timeline-section::before,
+            .timeline-section-pointer::before {
+                display: none;
+            }
+
+            .imgbox {
+                height: 260px;
+            }
+
+            .textbox {
+                padding: 24px;
+            }
+
+            .main-title {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container px-4 px-md-5">
+        <div class="display-2 text-center main-title my-4">PARTY EVENT</div>
+        <div class="text-center sub-title">活動派對流程規劃｜場地佈置｜主持企劃｜報價方案</div>
+
+        <div class="timeline-section">
+
+            <div class="row align-items-center timeline-section-pointer">
+                <div class="col-md-6">
+                    <div class="imgbox" style="background-image: url(images/nature01.avif);"></div>
+                </div>
+                <div class="col-md-6 my-3">
+                    <div class="textbox">
+                        <span class="tag">STEP 01｜活動開場</span>
+                        <h2>賓客入場與迎賓互動</h2>
+                        <p>
+                            活動開始前安排迎賓區、拍照打卡牆與音樂暖場，讓賓客一進場就能感受到派對氛圍。
+                        </p>
+                        <p>
+                            可搭配迎賓小點、調酒飲品、品牌背板、拍立得服務，提升活動質感與互動性。
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row align-items-center flex-lg-row-reverse timeline-section-pointer">
+                <div class="col-md-6">
+                    <div class="imgbox" style="background-image: url(images/nature01.avif);"></div>
+                </div>
+                <div class="col-md-6 my-3">
+                    <div class="textbox">
+                        <span class="tag">STEP 02｜主題儀式</span>
+                        <h2>主持開場與活動介紹</h2>
+                        <p>
+                            由主持人帶動現場氣氛，介紹活動主題、流程安排與重要嘉賓，讓派對正式進入主軸。
+                        </p>
+                        <p>
+                            適合生日派對、品牌發表、公司聚會、尾牙春酒、慶功宴與私人派對。
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row align-items-center timeline-section-pointer">
+                <div class="col-md-6">
+                    <div class="imgbox" style="background-image: url(images/nature01.avif);"></div>
+                </div>
+                <div class="col-md-6 my-3">
+                    <div class="textbox">
+                        <span class="tag">STEP 03｜派對互動</span>
+                        <h2>遊戲、抽獎與表演安排</h2>
+                        <p>
+                            依照活動人數與客群設計互動遊戲、抽獎橋段、表演節目或 DJ 音樂時段。
+                        </p>
+                        <p>
+                            透過節奏安排讓現場氣氛持續升溫，避免冷場，也讓賓客留下深刻印象。
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row align-items-center flex-lg-row-reverse timeline-section-pointer">
+                <div class="col-md-6">
+                    <div class="imgbox" style="background-image: url(images/nature01.avif);"></div>
+                </div>
+                <div class="col-md-6 my-3">
+                    <div class="textbox">
+                        <span class="tag">STEP 04｜活動收尾</span>
+                        <h2>合影留念與賓客送別</h2>
+                        <p>
+                            活動尾聲安排大合照、感謝致詞與紀念品發放，為整場派對留下完整回憶。
+                        </p>
+                        <p>
+                            可加購活動攝影、精華短片、社群素材剪輯，方便後續宣傳與紀錄。
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="price-section">
+            <div class="text-center mb-5">
+                <h2 class="fw-900">活動報價方案</h2>
+                <p class="sub-title">依照活動規模、場地需求與服務內容彈性調整</p>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="price-card">
+                        <h3>基本派對方案</h3>
+                        <div class="price">NT$ 18,000 起</div>
+                        <ul>
+                            <li>活動流程規劃</li>
+                            <li>簡易場地佈置</li>
+                            <li>主持流程建議</li>
+                            <li>適合 20～40 人小型聚會</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="price-card">
+                        <h3>精緻派對方案</h3>
+                        <div class="price">NT$ 38,000 起</div>
+                        <ul>
+                            <li>主題視覺規劃</li>
+                            <li>拍照背板設計</li>
+                            <li>活動主持與互動遊戲</li>
+                            <li>適合生日、品牌、公司聚會</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="price-card">
+                        <h3>高級客製方案</h3>
+                        <div class="price">專人報價</div>
+                        <ul>
+                            <li>完整活動企劃</li>
+                            <li>燈光、音響、DJ、攝影</li>
+                            <li>品牌主題佈置</li>
+                            <li>適合大型派對與商業活動</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
